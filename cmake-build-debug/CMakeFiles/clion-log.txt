@@ -1,0 +1,4 @@
+/Users/danielmints/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/danielmints/Desktop/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja /Users/danielmints/CLionProjects/Probability_Theory_Calculator
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/danielmints/CLionProjects/Probability_Theory_Calculator/cmake-build-debug

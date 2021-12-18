@@ -1,0 +1,14 @@
+//
+// Created by Daniel Mints on 12/18/21.
+//
+
+#ifndef PROBABILITY_THEORY_CALCULATOR_CDF_H
+#define PROBABILITY_THEORY_CALCULATOR_CDF_H
+
+
+class cdf {
+
+};
+
+
+#endif //PROBABILITY_THEORY_CALCULATOR_CDF_H
