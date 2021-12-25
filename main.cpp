@@ -2,6 +2,7 @@
 #include <vector>
 #include "pdf.h"
 #include "expected_val.h"
+#include "variance.h"
 
 using namespace std;
 
@@ -41,6 +42,7 @@ int main() {
 
     vector<double> parametersProbFunction;
     vector<double> parametersExpectedValue;
+    vector<double> parametersVariance;
 
 
     if (probabilitySpace == 1) {
@@ -51,6 +53,7 @@ int main() {
             cin >> a;
             parametersProbFunction.push_back(a);
             parametersExpectedValue.push_back(a);
+            parametersVariance.push_back(a);
         }
         /// bernouli
         else if (typeOfDistribution == 2) {
@@ -59,6 +62,7 @@ int main() {
             cin >> a;
             parametersProbFunction.push_back(a);
             parametersExpectedValue.push_back(a);
+            parametersVariance.push_back(a);
         }
         /// binomial
         else if (typeOfDistribution == 3) {
@@ -70,10 +74,12 @@ int main() {
             cin >> b;
             parametersExpectedValue.push_back(b);
             parametersProbFunction.push_back(b);
+            parametersVariance.push_back(b);
             cout << "Please enter the probability of success: ";
             cin >> c;
             parametersProbFunction.push_back(c);
             parametersExpectedValue.push_back(c);
+            parametersVariance.push_back(c);
         }
         /// pois
         else if (typeOfDistribution == 4){
@@ -85,6 +91,7 @@ int main() {
             cin >> b;
             parametersProbFunction.push_back(b);
             parametersExpectedValue.push_back(b);
+            parametersVariance.push_back(b);
         }
         /// geometrical
         else {
@@ -96,6 +103,7 @@ int main() {
             cin >> b;
             parametersProbFunction.push_back(b);
             parametersExpectedValue.push_back(b);
+            parametersVariance.push_back(b);
         }
     }
 
@@ -107,10 +115,12 @@ int main() {
             cin >> a;
             parametersProbFunction.push_back(a);
             parametersExpectedValue.push_back(a);
+            parametersVariance.push_back(a);
             cout << "Please enter the end of the segment: ";
             cin >> b;
             parametersExpectedValue.push_back(b);
             parametersProbFunction.push_back(b);
+            parametersVariance.push_back(b);
             cout << "Please enter the start random variable: ";
             cin >> c;
             parametersProbFunction.push_back(c);
@@ -128,6 +138,7 @@ int main() {
             cout << "Please enter delta squared: ";
             cin >> c;
             parametersProbFunction.push_back(c);
+            parametersVariance.push_back(c);
         }
         /// exp
         else if (typeOfDistribution == 3) {
@@ -139,6 +150,7 @@ int main() {
             cin >> b;
             parametersProbFunction.push_back(b);
             parametersExpectedValue.push_back(b);
+            parametersVariance.push_back(b);
         }
         /// Cauchy
         else {
@@ -155,7 +167,9 @@ int main() {
     cout << "------------------------------------------------------------------------------------------------" << endl;
 
     pdf probabilityFunction(probabilitySpace ,typeOfDistribution, parametersProbFunction);
-    expected_val expectedValue(probabilitySpace ,typeOfDistribution, parametersProbFunction);
+    expected_val expectedValue(probabilitySpace ,typeOfDistribution, parametersExpectedValue);
+    variance variance(probabilitySpace ,typeOfDistribution, parametersVariance);
+
 
     return 0;
 }
