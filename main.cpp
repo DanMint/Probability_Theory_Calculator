@@ -14,7 +14,7 @@ int main() {
     int typeOfDistribution;
 
 
-    cout << "Discrete or continuous? (Please enter (1) for discrete and (2) for continuous)" << endl;
+    cout << "Discrete or continuous? (Please enter (1) for discrete and (2) for continuous): ";
     cin >> probabilitySpace;
 
     if (probabilitySpace > 2 || probabilitySpace < 1) {
@@ -83,6 +83,53 @@ int main() {
             cin >> a;
             parameters.push_back(a);
             cout << "Please enter the p: ";
+            cin >> b;
+            parameters.push_back(b);
+        }
+    }
+
+    if (probabilitySpace == 2) {
+        /// uniform
+        if (typeOfDistribution == 1) {
+            double a, b, c;
+            cout << "Please enter the start of the segment: ";
+            cin >> a;
+            parameters.push_back(a);
+            cout << "Please enter the end of the segment: ";
+            cin >> b;
+            parameters.push_back(b);
+            cout << "Please enter the start random variable: ";
+            cin >> c;
+            parameters.push_back(c);
+        }
+        /// normal
+        else if (typeOfDistribution == 2) {
+            double a, b, c;
+            cout << "Please enter the random variable: ";
+            cin >> a;
+            parameters.push_back(a);
+            cout << "Please enter the a: ";
+            cin >> b;
+            parameters.push_back(b);
+            cout << "Please enter delta squared: ";
+            cin >> c;
+            parameters.push_back(c);
+        }
+        else if (typeOfDistribution == 3) {
+            double a, b;
+            cout << "Please enter the random variable: ";
+            cin >> a;
+            parameters.push_back(a);
+            cout << "Please enter the lambda: ";
+            cin >> b;
+            parameters.push_back(b);
+        }
+        else {
+            double a, b;
+            cout << "Please enter the random variable: ";
+            cin >> a;
+            parameters.push_back(a);
+            cout << "Please enter the delta: ";
             cin >> b;
             parameters.push_back(b);
         }
