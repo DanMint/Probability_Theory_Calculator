@@ -35,7 +35,7 @@ public:
         /// 2 - is normal distribution. 1st input is the d.v (X). 2nd input is the a. 3rd input is the delta squared
         /// 3 - is expsonential distribution. 1st input will be the d.v (X). 2nd input will be the lambda
         /// 4 - is Cauchy. 1st input is the d.v (X). 2nd input is delta (𝜎)
-        vector<pair<int, double>> tempContinuous = {{1, (1 / (needed[1] - needed[0])) * containedInSegment(needed[2], needed[0], needed[1])}, {2, normalPdf()}, {3, needed[1] * exp(-(needed[0] * needed[1]))}, {4, needed[1] / (M_PI * (
+        vector<pair<int, double>> tempContinuous = {{1, (1 / (needed[1] - needed[0])) * containedInSegment(needed[2], needed[0], needed[1])}, {2, normalPdf()}, {3, needed[1] * pow(2.71828, -needed[0] * needed[1])}, {4, needed[1] / (M_PI * (
                 pow(needed[0], 2)) + pow(needed[1], 2))}};
         continuousProbabilities = tempContinuous;
 

@@ -84,12 +84,6 @@ build CMakeFiles/Probability_Theory_Calculator.dir/pdf.cpp.o: CXX_COMPILER__Prob
   OBJECT_DIR = CMakeFiles/Probability_Theory_Calculator.dir
   OBJECT_FILE_DIR = CMakeFiles/Probability_Theory_Calculator.dir
 
-build CMakeFiles/Probability_Theory_Calculator.dir/cdf.cpp.o: CXX_COMPILER__Probability_Theory_Calculator_Debug /Users/danielmints/CLionProjects/Probability_Theory_Calculator/cdf.cpp || cmake_object_order_depends_target_Probability_Theory_Calculator
-  DEP_FILE = CMakeFiles/Probability_Theory_Calculator.dir/cdf.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/Probability_Theory_Calculator.dir
-  OBJECT_FILE_DIR = CMakeFiles/Probability_Theory_Calculator.dir
-
 build CMakeFiles/Probability_Theory_Calculator.dir/expected_val.cpp.o: CXX_COMPILER__Probability_Theory_Calculator_Debug /Users/danielmints/CLionProjects/Probability_Theory_Calculator/expected_val.cpp || cmake_object_order_depends_target_Probability_Theory_Calculator
   DEP_FILE = CMakeFiles/Probability_Theory_Calculator.dir/expected_val.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
@@ -102,12 +96,6 @@ build CMakeFiles/Probability_Theory_Calculator.dir/variance.cpp.o: CXX_COMPILER_
   OBJECT_DIR = CMakeFiles/Probability_Theory_Calculator.dir
   OBJECT_FILE_DIR = CMakeFiles/Probability_Theory_Calculator.dir
 
-build CMakeFiles/Probability_Theory_Calculator.dir/char_func.cpp.o: CXX_COMPILER__Probability_Theory_Calculator_Debug /Users/danielmints/CLionProjects/Probability_Theory_Calculator/char_func.cpp || cmake_object_order_depends_target_Probability_Theory_Calculator
-  DEP_FILE = CMakeFiles/Probability_Theory_Calculator.dir/char_func.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/Probability_Theory_Calculator.dir
-  OBJECT_FILE_DIR = CMakeFiles/Probability_Theory_Calculator.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Probability_Theory_Calculator
@@ -116,7 +104,7 @@ build CMakeFiles/Probability_Theory_Calculator.dir/char_func.cpp.o: CXX_COMPILER
 #############################################
 # Link the executable Probability_Theory_Calculator
 
-build Probability_Theory_Calculator: CXX_EXECUTABLE_LINKER__Probability_Theory_Calculator_Debug CMakeFiles/Probability_Theory_Calculator.dir/main.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/pdf.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/cdf.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/expected_val.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/variance.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/char_func.cpp.o
+build Probability_Theory_Calculator: CXX_EXECUTABLE_LINKER__Probability_Theory_Calculator_Debug CMakeFiles/Probability_Theory_Calculator.dir/main.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/pdf.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/expected_val.cpp.o CMakeFiles/Probability_Theory_Calculator.dir/variance.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
   OBJECT_DIR = CMakeFiles/Probability_Theory_Calculator.dir
   POST_BUILD = :

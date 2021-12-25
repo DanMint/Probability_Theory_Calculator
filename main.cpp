@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "pdf.h"
+#include "expected_val.h"
 
 using namespace std;
 
@@ -36,9 +37,11 @@ int main() {
 
     cin >> typeOfDistribution;
 
-    cout << "Please enter the parameters that are needed for the distribution: " << endl;
+    cout << "Please enter the that are needed for the distribution: " << endl;
 
-    vector<double> parameters;
+    vector<double> parametersProbFunction;
+    vector<double> parametersExpectedValue;
+
 
     if (probabilitySpace == 1) {
         /// uniform
@@ -46,45 +49,53 @@ int main() {
             double a;
             cout << "Please enter the size of the Uniform Distribution: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
+            parametersExpectedValue.push_back(a);
         }
         /// bernouli
         else if (typeOfDistribution == 2) {
             double a;
             cout << "Please enter the probability of success: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
+            parametersExpectedValue.push_back(a);
         }
         /// binomial
         else if (typeOfDistribution == 3) {
             double a, b, c;
             cout << "Please enter amount of wins: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
             cout << "Please enter amount of tries: ";
             cin >> b;
-            parameters.push_back(b);
+            parametersExpectedValue.push_back(b);
+            parametersProbFunction.push_back(b);
             cout << "Please enter the probability of success: ";
             cin >> c;
-            parameters.push_back(c);        }
+            parametersProbFunction.push_back(c);
+            parametersExpectedValue.push_back(c);
+        }
         /// pois
         else if (typeOfDistribution == 4){
             double a, b;
             cout << "Please enter the x: ";
             cin >> a;
-            parameters.push_back(a);            cout << "Please enter the lambda: ";
+            parametersProbFunction.push_back(a);
+            cout << "Please enter the lambda: ";
             cin >> b;
-            parameters.push_back(b);
+            parametersProbFunction.push_back(b);
+            parametersExpectedValue.push_back(b);
         }
         /// geometrical
         else {
             double a, b;
             cout << "Please enter the x: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
             cout << "Please enter the p: ";
             cin >> b;
-            parameters.push_back(b);
+            parametersProbFunction.push_back(b);
+            parametersExpectedValue.push_back(b);
         }
     }
 
@@ -94,48 +105,57 @@ int main() {
             double a, b, c;
             cout << "Please enter the start of the segment: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
+            parametersExpectedValue.push_back(a);
             cout << "Please enter the end of the segment: ";
             cin >> b;
-            parameters.push_back(b);
+            parametersExpectedValue.push_back(b);
+            parametersProbFunction.push_back(b);
             cout << "Please enter the start random variable: ";
             cin >> c;
-            parameters.push_back(c);
+            parametersProbFunction.push_back(c);
         }
         /// normal
         else if (typeOfDistribution == 2) {
             double a, b, c;
             cout << "Please enter the random variable: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
             cout << "Please enter the a: ";
             cin >> b;
-            parameters.push_back(b);
+            parametersProbFunction.push_back(b);
+            parametersExpectedValue.push_back(b);
             cout << "Please enter delta squared: ";
             cin >> c;
-            parameters.push_back(c);
+            parametersProbFunction.push_back(c);
         }
+        /// exp
         else if (typeOfDistribution == 3) {
             double a, b;
             cout << "Please enter the random variable: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
             cout << "Please enter the lambda: ";
             cin >> b;
-            parameters.push_back(b);
+            parametersProbFunction.push_back(b);
+            parametersExpectedValue.push_back(b);
         }
+        /// Cauchy
         else {
             double a, b;
             cout << "Please enter the random variable: ";
             cin >> a;
-            parameters.push_back(a);
+            parametersProbFunction.push_back(a);
             cout << "Please enter the delta: ";
             cin >> b;
-            parameters.push_back(b);
+            parametersProbFunction.push_back(b);
         }
     }
 
-    pdf probabilityFunction(probabilitySpace ,typeOfDistribution, parameters);
+    cout << "------------------------------------------------------------------------------------------------" << endl;
+
+    pdf probabilityFunction(probabilitySpace ,typeOfDistribution, parametersProbFunction);
+    expected_val expectedValue(probabilitySpace ,typeOfDistribution, parametersProbFunction);
 
     return 0;
 }
